@@ -1,0 +1,29 @@
+### Steps taken for EDA
+
+`1. Loading and Understanding Data`: Importing all data files, and then printing out the dataframe, to better understand numeric/column variables.
+
+`2. Data Cleaning`: Removing rows with any null values, or columns with no description as to the info its trying to provide. Also removing extra date info, that don't have sales, which is our main focus column.
+
+`3. Combine Dataframe`: Combine the 3 separate dataframes together, so it's ready for ML training/easier to read in one place.
+
+`4. Data Visualization`: Looking at numeric and categorical colummns in graph form, to see if there are interesting patterns on sales, what tyep column means, or possible outliers.
+
+`5. Data Adjustment`: Adjusting a few individual type column's value to match what was observed from data visualization, and what I think it's meant to represent.
+
+`6. One Hot Encoding`: Type column is one hot encoded, so ML training will be able to train on the data frame.
+
+`7. Correlation Analysis`: Looking at correlation of all numeric values to the 'weekly sales' column.
+
+`8. Feature Selection`: Using the correlation information, to remove 'fuel' price as it provided the least amount of correlation to 'weekly sales'.
+
+
+
+### Interesting findings during EDA
+
+`1. Data can be undescriptive`: Required some educational guesses with some of the columns, e.g. department and type. MarkDown 1-5 columns were especially confusing, with so many randomly missing values, and seems as if they're operating differently from each other. So has been removed from data frame due to too many unknown variables.
+
+`2. Consistent store sales`: Looking at all weekly sales from all stores through box and whisker/histogram, often had minimal variation in weekly sales, which explains why certain parts of histogram starts bunching up. As stores often achieve a constant weekly sales, that keep them in the same range.
+
+`3. Store sales diminish, as store number increases`: E.g. store 1 often have higher profits than store 40, despite similar store size. It likely indicates that stores with higher numbers are newer stores, where stores aren't yet established in the neighbourhood. But vice versa for low numbers, where it had time to integrate with the community.
+
+`4. Type column likely indicate store size, and are adjusted`: Type has A, B, and C. When colour categorizing it over store size, it shows a pattern of large, medium, and small on the bar graph. A few 'C's didn't align too well, so I've adjusted to fit my observation. With reasoning being 'legacy type categorizing' and 'possible human error'.
